@@ -26,13 +26,14 @@ namespace Orders.Backend.Controllers
         public async Task<IActionResult> GetAsync(int id)
         {
             var country = await _context.Countries.FindAsync(id);
-            if(country==null)
+            if (country == null)
                 return NotFound();
             return Ok(country);
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostAsync(Country country) { 
+        public async Task<IActionResult> PostAsync(Country country)
+        {
             _context.Add(country);
             await _context.SaveChangesAsync();
             return Ok(country);
