@@ -5,6 +5,6 @@
 @if(category is null)
 {
     <Loading />
-} else {    
-    <CategoryForm @ref="categoryForm" Category="category" OnValidSubmit="EditAsync" ReturnAction="Return" />
+} else {
+    <FormWithName @ref="categoryForm" Label="Categoría:" Model="category" OnValidSubmit="EditAsync" ReturnAction="Return" />
 }
