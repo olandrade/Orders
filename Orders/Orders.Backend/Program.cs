@@ -17,7 +17,9 @@ builder.Services.AddTransient<SeedDb>(); //AddTransient - para uso minimo
 builder.Services.AddScoped(typeof(IGenericUnitsOfWork<>), typeof(GenericUnitsOfWork<>));   //AddTransient - para uso multiproceso
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped(typeof(ICountriesRepository), typeof(CountriesRepository));
-builder.Services.AddScoped(typeof(ICountriesUnitsOfWork), typeof(CountriesUnitsOfWork));
+builder.Services.AddScoped(typeof(IStatesRepository), typeof(StatesRepository));
+builder.Services.AddScoped(typeof(ICountriesUnitOfWork), typeof(CountriesUnitOfWork));
+builder.Services.AddScoped(typeof(IStatesUnitOfWork), typeof(StatesUnitOfWork));
 
 var app = builder.Build();
 SeedDb(app);

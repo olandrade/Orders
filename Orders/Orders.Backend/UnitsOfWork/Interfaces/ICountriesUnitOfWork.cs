@@ -3,7 +3,7 @@ using Orders.Shared.Responses;
 
 namespace Orders.Backend.UnitsOfWork.Interfaces
 {
-    public interface ICountriesUnitsOfWork
+    public interface ICountriesUnitOfWork
     {
         Task<ActionResponse<Country>> GetAsync(int id);
         Task<ActionResponse<IEnumerable<Country>>> GetAsync();

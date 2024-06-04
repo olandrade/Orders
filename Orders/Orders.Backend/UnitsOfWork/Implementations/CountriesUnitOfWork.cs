@@ -5,12 +5,12 @@ using Orders.Shared.Responses;
 
 namespace Orders.Backend.UnitsOfWork.Implementations
 {
-    public class CountriesUnitsOfWork : GenericUnitsOfWork<Country>, ICountriesUnitsOfWork
+    public class CountriesUnitOfWork : GenericUnitsOfWork<Country>, ICountriesUnitOfWork
     {
         private readonly IGenericRepository<Country> _repository;
         private readonly ICountriesRepository _countriesRepository;
 
-        public CountriesUnitsOfWork(IGenericRepository<Country> repository, ICountriesRepository countriesRepository) : base(repository)
+        public CountriesUnitOfWork(IGenericRepository<Country> repository, ICountriesRepository countriesRepository) : base(repository)
         {
             _repository = repository;
             _countriesRepository = countriesRepository;
