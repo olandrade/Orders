@@ -14,12 +14,16 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer("name=DKConn"));
 builder.Services.AddTransient<SeedDb>(); //AddTransient - para uso minimo
 
-builder.Services.AddScoped(typeof(IGenericUnitsOfWork<>), typeof(GenericUnitsOfWork<>));   //AddTransient - para uso multiproceso
-builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));   //       AddScoped - para uso multiproceso
+builder.Services.AddScoped(typeof(IGenericUnitsOfWork<>), typeof(GenericUnitsOfWork<>));
+
 builder.Services.AddScoped(typeof(ICountriesRepository), typeof(CountriesRepository));
 builder.Services.AddScoped(typeof(IStatesRepository), typeof(StatesRepository));
+builder.Services.AddScoped(typeof(ICitiesRepository), typeof(CitiesRepository));
+
 builder.Services.AddScoped(typeof(ICountriesUnitOfWork), typeof(CountriesUnitOfWork));
 builder.Services.AddScoped(typeof(IStatesUnitOfWork), typeof(StatesUnitOfWork));
+builder.Services.AddScoped(typeof(ICitiesUnitOfWork), typeof(CitiesUnitOfWork));
 
 var app = builder.Build();
 SeedDb(app);

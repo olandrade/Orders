@@ -8,8 +8,11 @@ namespace Orders.Backend.Controllers
     [Route("api/[controller]")]
     public class CitiesController : GenericController<City>
     {
-        public CitiesController(IGenericUnitsOfWork<City> unitOfWork) : base(unitOfWork)
+        private readonly ICitiesUnitOfWork _citiesUnitOfWork;
+
+        public CitiesController(IGenericUnitsOfWork<City> unitOfWork, ICitiesUnitOfWork citiesUnitOfWork) : base(unitOfWork)
         {
+            _citiesUnitOfWork = citiesUnitOfWork;
         }
     }
 }
