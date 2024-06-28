@@ -20,10 +20,12 @@ builder.Services.AddScoped(typeof(IGenericUnitsOfWork<>), typeof(GenericUnitsOfW
 builder.Services.AddScoped(typeof(ICountriesRepository), typeof(CountriesRepository));
 builder.Services.AddScoped(typeof(IStatesRepository), typeof(StatesRepository));
 builder.Services.AddScoped(typeof(ICitiesRepository), typeof(CitiesRepository));
+builder.Services.AddScoped(typeof(ICategoriesRepository), typeof(CategoriesRepository));
 
 builder.Services.AddScoped(typeof(ICountriesUnitOfWork), typeof(CountriesUnitOfWork));
 builder.Services.AddScoped(typeof(IStatesUnitOfWork), typeof(StatesUnitOfWork));
 builder.Services.AddScoped(typeof(ICitiesUnitOfWork), typeof(CitiesUnitOfWork));
+builder.Services.AddScoped(typeof(ICategoriesUnitOfWork), typeof(CategoriesUnitOfWork));
 
 var app = builder.Build();
 SeedDb(app);
