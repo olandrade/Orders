@@ -20,7 +20,7 @@ namespace Orders.Backend.Repositories.Implementations
         public override async Task<ActionResponse<IEnumerable<City>>> GetAsync(PaginationDTO pagination)
         {
             var queryable = _context.Cities
-                .Where(x => x.State!.Id == pagination.Id)
+                .Where(x => x.StateId == pagination.Id)
                 .AsQueryable();
             return new ActionResponse<IEnumerable<City>>
             {
